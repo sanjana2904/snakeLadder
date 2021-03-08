@@ -7,29 +7,39 @@ namespace snakeLadder
         static void Main(string[] args)
         {
 
-             Console.WriteLine("Welcome to Snake and ladder!");
+            Console.WriteLine("Welcome to Snake and ladder!");
             int position = 0;
-            Random random = new Random();
-            int dice = random.Next(1, 7);
-            Console.WriteLine("dice value is: " + dice);
-            int options = random.Next(3);
-            Console.WriteLine("option value is: " + options);
-
-            switch (options)
+            for (position = 0; position <= 100; position++)
             {
-                case 0:
-                    break;
-                case 1:
-                    position = dice + position;
-                    break;
-                case 2:
-                    position = position - dice;
-                    break;
-                default:
-                    break;
-           
+                Random random = new Random();
+                int dice = random.Next(1, 7);
+                Console.WriteLine("dice value is: " + dice);
+                int options = random.Next(3);
+                Console.WriteLine("option value is: " + options);
+
+                switch (options)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        position = dice + position;
+                        break;
+                    case 2:
+                        position = position - dice;
+                        break;
+                    default:
+                        break;
+
+                }
+                Console.WriteLine("position : " + position);
+                if (position < 0)
+                {
+                    Console.WriteLine("Position is below 0. Hence resetting the position to 0");
+                    position = 0;
+                }
             }
-            Console.WriteLine("position : " + position);
+            
+            
         }
     }
 }
