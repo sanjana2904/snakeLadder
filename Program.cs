@@ -10,23 +10,7 @@ namespace snakeLadder
             Console.WriteLine("Welcome to Snake and ladder!");
             int position = 0;
             for (position = 0; position < 100;)
-            {
-
-                case 0:
-                    // NoPlay
-                    break;
-                case 1:
-                    //Ladder
-                    position = dice + position;
-                    break;
-                case 2:
-                    //Snake
-                    position = position - dice;
-                    break;
-                default:
-                    break;
-           
-
+            {    
                 int previousPosition = position;
                 Random random = new Random();
                 int dice = random.Next(1, 7);
@@ -49,7 +33,16 @@ namespace snakeLadder
 
                 }
                 Console.WriteLine("position : " + position);
-                
+                if (position < 0)
+                {
+                    Console.WriteLine("Position is below 0. Hence resetting the position to 0");
+                    position = 0;
+                }
+                else if (position > 100)
+                {
+                    Console.WriteLine("Position is above 100. Hence setting the previous position: " + previousPosition);
+                    position = previousPosition;
+                }
             }
             
             
