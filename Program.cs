@@ -18,11 +18,14 @@ namespace snakeLadder
             switch (options)
             {
                 case 0:
+                    // NoPlay
                     break;
                 case 1:
+                    //Ladder
                     position = dice + position;
                     break;
                 case 2:
+                    //Snake
                     position = position - dice;
                     break;
                 default:
